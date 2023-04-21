@@ -25,7 +25,6 @@ public class AVLTreeDemo {
         System.out.println();
         System.out.println("AVL树的高度是：" + avlTree.height() + " 左子树的高度是：" + avlTree.leftHeight() + " 右子树的高度是：" + avlTree.rightHeight());
         System.out.println("根节点是：" + avlTree.getRoot());
-        System.out.println("根节点是：" + avlTree.getRoot());
     }
 }
 
