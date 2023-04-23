@@ -1,4 +1,4 @@
-package greedy;
+package com.shstu.greedy;
 
 import java.util.HashMap;
 import java.util.HashSet;
