@@ -44,6 +44,7 @@ public class GreedyAlgorithm {
         HashSet<String> k5 = new HashSet<>();
         k5.add("杭州");
         k5.add("大连");
+        k5.add("广州");
         broadcast.put("K5", k5);
 
         cities.addAll(k1);
