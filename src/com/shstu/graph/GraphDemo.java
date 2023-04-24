@@ -22,7 +22,6 @@ public class GraphDemo {
         graph.insertEdges(2, 6, 1);
         graph.insertEdges(5, 6, 1);
 
-
         graph.DFS();
         System.out.println();
         graph.BFS();
