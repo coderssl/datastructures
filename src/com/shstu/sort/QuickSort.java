@@ -38,8 +38,8 @@ public class QuickSort {
         //交换基准数
         array[left] = array[l];
         array[l] = piovt;
-        quickSort(array, left, l-1);
-        quickSort(array, l+ 1, right);
+        quickSort(array, left, l - 1);
+        quickSort(array, l + 1, right);
     }
 
     @Test
