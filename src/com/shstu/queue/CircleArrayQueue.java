@@ -9,7 +9,7 @@ public class CircleArrayQueue {
     private int maxsize;
 
     public CircleArrayQueue(int n) {
-        maxsize = n;
+        maxsize = n + 1;
         array = new int[maxsize];
     }
 
@@ -56,8 +56,18 @@ public class CircleArrayQueue {
         return array[front];
     }
 
+    public int getTail() {
+        if (isEmpty()) {
+            throw new RuntimeException("环形队列为空!");
+        }
+        if (rear == 0) {
+            return array[maxsize - 1];
+        }
+        return array[rear - 1];
+    }
+
     public static void main(String[] args) {
-        CircleArrayQueue queue = new CircleArrayQueue(3);
+        CircleArrayQueue queue = new CircleArrayQueue(4);
         char key = ' ';
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
@@ -67,6 +77,9 @@ public class CircleArrayQueue {
             System.out.println("a(add):添加数据到队列");
             System.out.println("g(get):从队列取出数据");
             System.out.println("h(head):查看队列头的数据");
+            System.out.println("t(tail):查看队列尾的数据");
+            System.out.println("i(isEmpty):队列是否为空");
+            System.out.println("f(isFull):队列是否为满");
             key = scanner.next().charAt(0);
             switch (key) {
                 case 's':
@@ -94,9 +107,22 @@ public class CircleArrayQueue {
                         System.out.println(e.getMessage());
                     }
                     break;
+                case 't':
+                    try {
+                        System.out.println("队列尾的数据是：" + queue.getTail());
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
                 case 'e':
                     scanner.close();
                     loop = false;
+                    break;
+                case 'i':
+                    System.out.println("队列是否为空：" + queue.isEmpty());
+                    break;
+                case 'f':
+                    System.out.println("队列是否为满：" + queue.isFull());
                     break;
                 default:
                     break;
